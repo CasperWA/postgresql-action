@@ -12,7 +12,7 @@ then
   docker_run="$docker_run -v $INIT_SCRIPT_PATH:/docker-entrypoint-initdb.d"
 fi
 
-docker_run="$docker_run -d -p 5432:5432 postgres:$INPUT_POSTGRESQL_VERSION"
+docker_run="$docker_run -d -p $INPUT_POSTGRESQL_PORT:5432 postgres:$INPUT_POSTGRESQL_VERSION"
 
 if [ ! -z "$INPUT_POSTGRESQL_CONF" ]
 then
