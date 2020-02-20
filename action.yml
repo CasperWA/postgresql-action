@@ -1,34 +1,34 @@
-name: 'Setup PostgreSQL'
-description: 'Setup a PostgreSQL database'
-author: 'Harmon'
+name: Setup PostgreSQL
+description: Setup a PostgreSQL database
+author: Harmon
 branding:
-  icon: 'database'
-  color: 'blue'
+  icon: database
+  color: blue
 inputs:
   # See https://hub.docker.com/_/postgres for supported versions
   # and further details on input environment variables
   postgresql version:
-    description: 'Version of PostgreSQL to use'
+    description: Version of PostgreSQL to use
     required: false
-    default: 'latest'
+    default: latest
   postgresql db:
-    description: 'POSTGRES_DB - name for the default database that is created'
+    description: POSTGRES_DB - name for the default database that is created
     required: false
     default: ''
   postgresql user:
-    description: 'POSTGRES_USER - create the specified user with superuser power'
+    description: POSTGRES_USER - create the specified user with superuser power
     required: false
     default: ''
   postgresql password:
-    description: 'POSTGRES_PASSWORD - superuser password'
+    description: POSTGRES_PASSWORD - superuser password
     required: false
     default: ''
   postgresql init scripts:
-    description: 'POSTGRES_INIT_SCRIPTS - directory containing DB init scripts'
+    description: POSTGRES_INIT_SCRIPTS - directory containing DB init scripts
     required: false
     default: ''
   postgresql conf:
-    description: 'POSTGRES_CONF - postgres configurations'
+    description: POSTGRES_CONF - postgres configurations
     required: false
     default: ''
   postgresql port:
@@ -40,7 +40,7 @@ inputs:
     required: false
     default: ''
 runs:
-  using: 'docker'
+  using: docker
   env:
     PORT: ${{ inputs.postgresql_port }}
-  image: 'Dockerfile'
+  image: Dockerfile
