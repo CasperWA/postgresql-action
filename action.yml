@@ -32,9 +32,11 @@ inputs:
     required: false
     default: ''
   postgresql port:
-    description: 'The port to bind to the docker'
+    description: POSTGRES_PORT - port to bind to the docker
     required: false
-    default: '5432'
+    default: 5432
 runs:
   using: 'docker'
+  env:
+    PORT: ${{ inputs.postgresql_port }}
   image: 'Dockerfile'
