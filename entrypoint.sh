@@ -4,6 +4,7 @@ docker_run="docker run"
 docker_run="$docker_run -e POSTGRES_DB=$INPUT_POSTGRESQL_DB"
 docker_run="$docker_run -e POSTGRES_USER=$INPUT_POSTGRESQL_USER"
 docker_run="$docker_run -e POSTGRES_PASSWORD=$INPUT_POSTGRESQL_PASSWORD"
+docker_run="$docker_run -e POSTGRES_HOST_AUTH_METHOD=$INPUT_POSTGRESQL_AUTH"
 
 if [ ! -z "$INPUT_POSTGRESQL_INIT_SCRIPTS" ]
 then

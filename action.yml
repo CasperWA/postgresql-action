@@ -35,6 +35,10 @@ inputs:
     description: POSTGRES_PORT - port to bind to the docker
     required: false
     default: 5432
+  postgresql auth:
+    description: POSTGRES_AUTH - set auth method for host connections
+    required: false
+    default: ''
 runs:
   using: 'docker'
   env:
